@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente de series, películas y libros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="contenedor-principal">
+        <!-- Zona superior: historial de mensajes del chat -->
+        <section id="zona-de-chat" class="zona-de-chat" aria-live="polite" aria-label="Zona de chat">
+            <div class="mensaje mensaje-agente">
+                <span class="autor-mensaje">Agente de series, películas y libros</span>
+                <p class="texto-mensaje">¡Hola! Contame qué géneros, historias o títulos te gustan y te recomiendo series, películas o libros ideales para vos.</p>
+            </div>
+        </section>
+
+        <!-- Zona inferior: formulario de entrada de texto -->
+        <section id="zona-de-escritura" class="zona-de-escritura" aria-label="Zona de escritura">
+            <form id="formulario-chat" class="formulario-chat">
+                <div class="campo-contenedor">
+                    <textarea 
+                        id="entrada-mensaje" 
+                        class="entrada-mensaje" 
+                        placeholder="Escribí qué te gustaría ver o leer..." 
+                        maxlength="500" 
+                        rows="2"
+                        aria-label="Escribí tu mensaje"
+                    ></textarea>
+                    <div class="barra-inferior-entrada">
+                        <span id="estado-conexion" class="estado-conexion"></span>
+                        <span id="contador-caracteres" class="contador-caracteres">0 / 500</span>
+                    </div>
+                </div>
+                <button type="submit" id="boton-enviar" class="boton-enviar">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Cargar config.js estrictamente antes que script.js -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
